@@ -1,0 +1,45 @@
+﻿// To do//
+
+
+SPRINT 1:
+
+ - Add proper lins to locaiton of mapping filed in process-config#
+ - record demo
+ - padding on text
+ - send to porter 
+
+
+ 
+
+ SPRINT 2
+ - make logs a csv fle  so the data vcan be orders and filters 
+ - add name for the user for tracebility
+  - try catch finally
+ - error list
+
+
+ ///// CODE ////////////////////////
+
+
+ 1 //////
+
+ // add to file paths 
+
+  string databaseName = "Contacts.db";
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string databasePath = Path.Combine(folderPath,databaseName);
+
+            using (SQLiteConnection connection = new SQLiteConnection(databasePath))
+            {
+                //will be ignored if it already exists
+                connection.CreateTable<Contact>();
+                connection.Insert(contact);
+            }
+
+
+
+
+
+            // to have the window satrt in the right place. 
+            Owner= Application.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner; 
